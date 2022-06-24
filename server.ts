@@ -1,6 +1,9 @@
 import * as http from 'http';
+import * as dotenv from 'dotenv';
+dotenv.config();
 
-const port = 8080;
+const host = process.env.HOST;
+const port = process.env.PORT;
 
 const requestListener = ((req: any, res: any) => {
 
@@ -28,4 +31,4 @@ const requestListener = ((req: any, res: any) => {
 
 const server = http.createServer(requestListener);
 server.listen(port);
-console.log(`Your web server is running url: localhost:${port}`);
+console.log(`Your web server is running url: ${host}:${port}`);
