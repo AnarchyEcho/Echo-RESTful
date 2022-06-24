@@ -1,0 +1,8 @@
+{
+  "name": "node_server",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "author": "Andre Hagen",
+  "license": "MIT",
+  "private": true
+}
