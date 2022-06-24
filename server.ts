@@ -22,7 +22,7 @@ const requestListener = ((req: any, res: any) => {
 
   if (req.url === '/shell') {
     res.writeHead(200, { 'Content-Type': 'text/plain' });
-    return exec('sh ./scripts/main.sh', ((err, stdout, stderr) => {
+    return exec('sh ./scripts/main.sh', ((err, stdout) => {
       if (err) console.error(err);
       console.log('Shell script executed');
       res.write(`${stdout}`);
