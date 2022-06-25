@@ -1,3 +1,3 @@
-# Simple node server written in typescript
+# Simple node RESTful API created in NodeJS with TypeScript
 
-Docker commands: [docker build -t NAME . , docker run -p PORT:PORT NAME]
+Optional: Docker commands: [docker build -t NAME . , docker run -p PORT:PORT NAME]
