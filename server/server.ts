@@ -26,6 +26,11 @@ const requestListener = ((req: any, res: any) => {
       res.end();
     }));
 
+  case '/api*':
+    res.writeHead(200);
+    console.log('API request received');
+    return res.end();
+
   case '/api/hello':
     res.writeHead(200, { 'Content-Type': 'application/json' });
     return fs.readFile('./server/api/helloWorld.json', 'utf8', ((err, data) => {
@@ -41,4 +46,4 @@ const requestListener = ((req: any, res: any) => {
   }
 });
 
-http.createServer(requestListener).listen(process.env.PORT, (() => console.log(`Your web server is running url: ${url}`)));
+http.createServer(requestListener).listen(process.env.PORT, (() => console.log(`Your web server is running on url: ${url}`)));
