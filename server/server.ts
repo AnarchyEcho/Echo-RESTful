@@ -17,7 +17,7 @@ const requestListener = ((req: any, res: any) => {
       return res.end();
     }));
 
-  case '/shell':
+  case '/scripts/hello':
     res.writeHead(200, { 'Content-Type': 'text/plain' });
     return exec('sh ./scripts/main.sh', ((err, stdout) => {
       if (err) console.error(err);
