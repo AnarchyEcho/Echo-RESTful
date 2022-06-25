@@ -20,7 +20,8 @@
   },
   "scripts": {
     "lint": "eslint . --ext .ts",
-    "start": "nodemon",
+    "start": "ts-node ./server/server.ts",
+    "dev": "nodemon",
     "build": "tsc -p ."
   }
 }
