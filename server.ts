@@ -11,13 +11,11 @@ const requestListener = ((req: any, res: any) => {
   switch (req.url) {
   case '/':
     res.writeHead(200, { 'Content-Type': 'text/html' });
-    res.write('This is the home page');
-    return res.end();
-
-  case '/about':
-    res.writeHead(200, { 'Content-Type': 'text/html' });
-    res.write('This is the about page');
-    return res.end();
+    return fs.readFile('./client/index.html', ((err, data) => {
+      if (err) console.error(err);
+      res.write(data);
+      return res.end();
+    }));
 
   case '/shell':
     res.writeHead(200, { 'Content-Type': 'text/plain' });
