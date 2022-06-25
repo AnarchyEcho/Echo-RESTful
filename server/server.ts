@@ -17,22 +17,18 @@ const requestListener = ((req: any, res: any) => {
       return res.end();
     }));
 
-  case '/scripts/hello':
+  case '/scripts/helloWorld':
     res.writeHead(200, { 'Content-Type': 'text/plain' });
-    return exec('sh ./server/scripts/helloWorld.sh', ((err, stdout) => {
+    return exec(`sh ./server/${req.url}.sh`, ((err, stdout) => {
       if (err) console.error(err);
       console.log('Shell script executed');
       res.write(`${stdout}`);
       res.end();
     }));
 
-  case '/api*':
-    res.writeHead(200);
-    console.log('API request received');
-    return res.end();
-
   case '/api/hello':
     res.writeHead(200, { 'Content-Type': 'application/json' });
+    console.log('API request received');
     return fs.readFile('./server/api/helloWorld.json', 'utf8', ((err, data) => {
       if (err) console.error(err);
       res.write(data);
@@ -41,7 +37,7 @@ const requestListener = ((req: any, res: any) => {
 
   default:
     res.writeHead(404, { 'Content-Type': 'text/html' });
-    res.write('<h1>404 Page Not Found</h1>');
+    res.write(`<h1>404 Page Not Found</h1> <p>URL: <a href="">${url + req.url}</a> is not a real url.</p> <a href="../../../../../../../..">Return to main page</a>`);
     return res.end();
   }
 });
