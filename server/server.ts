@@ -19,7 +19,7 @@ const requestListener = ((req: any, res: any) => {
 
   case '/scripts/hello':
     res.writeHead(200, { 'Content-Type': 'text/plain' });
-    return exec('sh ./scripts/main.sh', ((err, stdout) => {
+    return exec('sh ./server/scripts/helloWorld.sh', ((err, stdout) => {
       if (err) console.error(err);
       console.log('Shell script executed');
       res.write(`${stdout}`);
@@ -28,7 +28,7 @@ const requestListener = ((req: any, res: any) => {
 
   case '/api/hello':
     res.writeHead(200, { 'Content-Type': 'application/json' });
-    return fs.readFile('./api/helloWorld.json', 'utf8', ((err, data) => {
+    return fs.readFile('./server/api/helloWorld.json', 'utf8', ((err, data) => {
       if (err) console.error(err);
       res.write(data);
       return res.end();
