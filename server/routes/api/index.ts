@@ -14,6 +14,10 @@ router.get('/shopping', ((req: any, res: any) => {
   res.json(shopList);
 }));
 
+router.post('/shopping', ((req: any, res: any) => {
+  res.send(JSON.stringify(req.body));
+}));
+
 router.get('/plants', ((req: any, res: any) => {
   res.json(plants);
 }));
