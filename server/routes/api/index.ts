@@ -6,7 +6,7 @@ router.use(cors({
 }));
 import * as mdb from 'mongodb';
 
-const connectionString = `mongodb+srv://${process.env.DBUSER}:${process.env.DBPASSW}@shoppinglist.0kapu3q.mongodb.net/?retryWrites=true&w=majority`;
+const connectionString: any = process.env.MONGODB_URI;
 
 mdb.MongoClient.connect(connectionString).then(client => {
   console.log('Connected to Database');
