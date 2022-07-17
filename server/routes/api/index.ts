@@ -14,8 +14,15 @@ router.get('/shopping', ((req: any, res: any) => {
   res.json(shopList);
 }));
 
-router.post('/shopping', ((req: any, res: any) => {
-  res.send(JSON.stringify(req.body));
+router.post('/shopping', ((req, res) => {
+  const items = [];
+  const item = {
+    id: items.length,
+    item: req.body.item,
+    quantity: req.body.quantity,
+  };
+  items.push(item);
+  res.status(200).send(req.body);
 }));
 
 router.get('/plants', ((req: any, res: any) => {
