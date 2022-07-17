@@ -14,7 +14,7 @@ mdb.MongoClient.connect(connectionString).then(client => {
   const itemCollection = db.collection('items');
 
   router.get('/shopping', (async (req: any, res: any) => {
-    db.collection('items').find().toArray().then((list: any) => {
+    itemCollection.find().toArray().then((list: any) => {
       res.json(list);
     }).catch(err => console.error(err));
   }));
@@ -34,11 +34,11 @@ mdb.MongoClient.connect(connectionString).then(client => {
         if (err) console.error(err);
         if (result.matchedCount > 0) {
           console.log('Existing entry found.');
-          res.status(400).redirect('/');
+          res.status(400).send('Existing entry found.');
         }
         else {
           console.log(`Created new document of ${req.body.item}`);
-          res.status(201).redirect('/');
+          res.status(201).send(`Created new document of ${req.body.item}`);
         }
       }
     );
@@ -51,15 +51,38 @@ mdb.MongoClient.connect(connectionString).then(client => {
         if (err) console.error(err);
         if (result.deletedCount == 0) {
           console.log(`${req.body.item} does not exist.`);
-          res.status(400).redirect('/');
+          res.status(400).send(`${req.body.item} does not exist.`);
         }
         else {
           console.log(`Deleted the [${req.body.item}] document`);
-          res.status(201).redirect('/');
+          res.status(200).send(`Deleted the [${req.body.item}] document`);
         }
       }
     );
   }));
+
+  router.put('/shopping', async (req, res) => {
+    itemCollection.updateOne(
+      { item: req.body.item },
+      {
+        $set: {
+          quantity: req.body.quantity,
+        },
+      },
+      { upsert: false },
+      (err: any, result: any) => {
+        if (err) { console.error(err); }
+        if (result.matchedCount == 0) {
+          console.error(`${req.body.item} not found, sending 400 to user.`);
+          res.status(400).send(`No document named [${req.body.item}] exists.`);
+        }
+        else {
+          console.log(`Updated quantity of ${req.body.item} to ${req.body.quantity}`);
+          res.status(200).send(`Updated quantity of ${req.body.item} to ${req.body.quantity}`);
+        }
+      }
+    );
+  });
 
 }).catch(error => console.error(error));
 
