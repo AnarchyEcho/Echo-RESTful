@@ -15,7 +15,7 @@ mdb.MongoClient.connect(connectionString).then(client => {
 
   router.get('/shopping', (async (req: any, res: any) => {
     itemCollection.find().toArray().then((list: any) => {
-      res.json(list);
+      res.status(200).json(list);
     }).catch(err => console.error(err));
   }));
 
