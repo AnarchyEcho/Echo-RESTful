@@ -32,11 +32,33 @@ mdb.MongoClient.connect(connectionString).then(client => {
       { upsert: true },
       (err: any, result: any) => {
         if (err) console.error(err);
-        if (result.matchedCount > 0) console.warn('Existing entry found.');
-        else console.log(`Created new document of ${req.body.item}`);
+        if (result.matchedCount > 0) {
+          console.log('Existing entry found.');
+          res.status(400).redirect('/');
+        }
+        else {
+          console.log(`Created new document of ${req.body.item}`);
+          res.status(201).redirect('/');
+        }
       }
     );
-    res.status(200).redirect('/');
+  }));
+
+  router.delete('/shopping', (async (req, res) => {
+    itemCollection.deleteOne(
+      { item: req.body.item },
+      (err: any, result: any) => {
+        if (err) console.error(err);
+        if (result.deletedCount == 0) {
+          console.log(`${req.body.item} does not exist.`);
+          res.status(400).redirect('/');
+        }
+        else {
+          console.log(`Deleted the [${req.body.item}] document`);
+          res.status(201).redirect('/');
+        }
+      }
+    );
   }));
 
 }).catch(error => console.error(error));
