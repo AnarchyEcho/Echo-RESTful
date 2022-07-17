@@ -2,7 +2,7 @@ import express from 'express';
 const router = express.Router();
 import cors from 'cors';
 router.use(cors({
-  origin: '*',
+  origin: [`http://localhost:${process.env.PORT}`, 'https://echo-restful.herokuapp.com/'],
 }));
 import * as mdb from 'mongodb';
 
