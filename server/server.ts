@@ -5,6 +5,7 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 import path from 'path';
 
+
 app.get('/', ((req, res) => res.sendFile(path.join(__dirname, '../client/index.html'))));
 
 app.use('/api/', require('./routes/api/index'));
