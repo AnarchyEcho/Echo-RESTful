@@ -12,6 +12,34 @@ mdb.MongoClient.connect(connectionString).then(client => {
   console.log('Connected to Database');
   const db = client.db('ShoppingList');
   const itemCollection = db.collection('items');
+  const usersCollection = db.collection('users');
+
+  router.get('/shopping/users', (async (req: any, res: any) => {
+    usersCollection.find().toArray().then((list: any) => {
+      res.status(200).json(list);
+    }).catch(err => console.error(err));
+  }));
+
+  router.post('/shopping/users', (async (req, res) => {
+    usersCollection.updateOne(
+      { uuid: req.body.uuid },
+      {
+        $set: { uuid: req.body.uuid },
+      },
+      { upsert: true },
+      (err: any, result: any) => {
+        if (err) console.error(err);
+        if (result.matchedCount > 0) {
+          console.log('Existing user found.');
+          res.status(400).send('Existing user found.');
+        }
+        else {
+          console.log(`Created new document of ${req.body.uuid}`);
+          res.status(201).send(`Created new document of ${req.body.uuid}`);
+        }
+      }
+    );
+  }));
 
   router.get('/shopping', (async (req: any, res: any) => {
     itemCollection.find().toArray().then((list: any) => {
@@ -61,7 +89,7 @@ mdb.MongoClient.connect(connectionString).then(client => {
     );
   }));
 
-  router.put('/shopping', async (req, res) => {
+  router.put('/shopping', (async (req, res) => {
     itemCollection.updateOne(
       { item: req.body.item },
       {
@@ -82,7 +110,7 @@ mdb.MongoClient.connect(connectionString).then(client => {
         }
       }
     );
-  });
+  }));
 
 }).catch(error => console.error(error));
 
