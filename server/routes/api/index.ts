@@ -2,7 +2,11 @@ import express from 'express';
 const router = express.Router();
 import cors from 'cors';
 router.use(cors({
-  origin: [`http://localhost:${process.env.PORT}`, 'https://echo-restful.herokuapp.com/'],
+  origin: [
+    `http://localhost:${process.env.PORT}`,
+    'https://echo-restful.herokuapp.com/',
+    'https://cvnuxt.vercel.app/',
+  ],
 }));
 import * as mdb from 'mongodb';
 
@@ -15,6 +19,7 @@ mdb.MongoClient.connect(connectionString).then(client => {
   const usersCollection = db.collection('users');
 
   router.get('/shopping/users', (async (req: any, res: any) => {
+    res.setHeader('Content-Type', 'application/json');
     usersCollection.find().toArray().then((list: any) => {
       res.status(200).json(list);
     }).catch(err => console.error(err));
@@ -42,6 +47,7 @@ mdb.MongoClient.connect(connectionString).then(client => {
   }));
 
   router.get('/shopping', (async (req: any, res: any) => {
+    res.setHeader('Content-Type', 'application/json');
     itemCollection.find().toArray().then((list: any) => {
       res.status(200).json(list);
     }).catch(err => console.error(err));
@@ -110,6 +116,12 @@ mdb.MongoClient.connect(connectionString).then(client => {
         }
       }
     );
+  }));
+
+  router.get('/projects', (async (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    const data = require('./projects.json');
+    res.json(data);
   }));
 
 }).catch(error => console.error(error));

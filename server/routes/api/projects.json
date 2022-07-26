@@ -1,0 +1,226 @@
+[
+  {
+    "id": 368994681,
+    "name": "ArtGalleryProject",
+    "full_name": "KodeAndre/ArtGalleryProject",
+    "html_url": "https://github.com/KodeAndre/ArtGalleryProject",
+    "description": "The not-react version of a portfolio i did for an artist",
+    "homepage": "",
+    "language": "HTML",
+    "has_projects": true,
+    "license": null,
+    "topics": []
+  },
+  {
+    "id": 382719464,
+    "name": "artgalleryreact",
+    "full_name": "KodeAndre/artgalleryreact",
+    "html_url": "https://github.com/KodeAndre/artgalleryreact",
+    "description": "Portfolio for artist Immu.jpg",
+    "homepage": "https://kodeandre.github.io/artgalleryreact/",
+    "language": "TypeScript",
+    "has_projects": true,
+    "license": null,
+    "topics": []
+  },
+  {
+    "id": 372785066,
+    "name": "Blackjack",
+    "full_name": "KodeAndre/Blackjack",
+    "html_url": "https://github.com/KodeAndre/Blackjack",
+    "description": "A simple game of Blackjack",
+    "homepage": "",
+    "language": "JavaScript",
+    "has_projects": true,
+    "license": null,
+    "topics": []
+  },
+  {
+    "id": 394243727,
+    "name": "CountdownTimer",
+    "full_name": "KodeAndre/CountdownTimer",
+    "html_url": "https://github.com/KodeAndre/CountdownTimer",
+    "description": "Countdown timer from FrontEnd Mentor",
+    "homepage": "https://kodeandre.github.io/CountdownTimer/",
+    "language": "CSS",
+    "has_projects": true,
+    "license": null,
+    "topics": []
+  },
+  {
+    "id": 377811928,
+    "name": "cvreact",
+    "full_name": "KodeAndre/cvreact",
+    "html_url": "https://github.com/KodeAndre/cvreact",
+    "description": "(Old) Personal CV Website",
+    "homepage": "https://kodeandre.github.io/cvreact/",
+    "language": "TypeScript",
+    "has_projects": true,
+    "license": null,
+    "topics": [
+      "javascript",
+      "portfolio",
+      "react",
+      "reactjs"
+    ]
+  },
+  {
+    "id": 490214314,
+    "name": "cvnuxt",
+    "full_name": "KodeAndre/cvnuxt",
+    "html_url": "https://github.com/KodeAndre/cvnuxt",
+    "description": "CV website created in Nuxt3 (Vue)",
+    "homepage": "cvnuxt.vercel.app",
+    "language": "TypeScript",
+    "has_projects": false,
+    "license": {
+      "key": "mit",
+      "name": "MIT License",
+      "spdx_id": "MIT",
+      "url": "https://api.github.com/licenses/mit"
+    },
+    "topics": []
+  },
+  {
+    "id": 489400457,
+    "name": "echoBot",
+    "full_name": "KodeAndre/echoBot",
+    "html_url": "https://github.com/KodeAndre/echoBot",
+    "description": "Just a discord bot for my own and friends\" enjoyment",
+    "homepage": "",
+    "language": "TypeScript",
+    "has_projects": false,
+    "license": {
+      "key": "mit",
+      "name": "MIT License",
+      "spdx_id": "MIT",
+      "url": "https://api.github.com/licenses/mit"
+    },
+    "topics": []
+  },
+  {
+    "id": 412101868,
+    "name": "gimpinfo",
+    "full_name": "KodeAndre/gimpinfo",
+    "html_url": "https://github.com/KodeAndre/gimpinfo",
+    "description": "Website to keep track of GIM stats++",
+    "homepage": "https://gimpinfo.vercel.app",
+    "language": "TypeScript",
+    "has_projects": true,
+    "license": {
+      "key": "gpl-3.0",
+      "name": "GNU General Public License v3.0",
+      "spdx_id": "GPL-3.0",
+      "url": "https://api.github.com/licenses/gpl-3.0"
+    },
+    "topics": []
+  },
+  {
+    "id": 466538748,
+    "name": "IdleWeeb",
+    "full_name": "KodeAndre/IdleWeeb",
+    "html_url": "https://github.com/KodeAndre/IdleWeeb",
+    "description": "In no way will this be a good looking game, but it works",
+    "homepage": "",
+    "language": "C#",
+    "has_projects": true,
+    "license": null,
+    "topics": []
+  },
+  {
+    "id": 394540098,
+    "name": "NativeTest",
+    "full_name": "KodeAndre/NativeTest",
+    "html_url": "https://github.com/KodeAndre/NativeTest",
+    "description": "React Native Test app",
+    "homepage": "",
+    "language": "Java",
+    "has_projects": true,
+    "license": null,
+    "topics": []
+  },
+  {
+    "id": 507089979,
+    "name": "Echo-RESTful",
+    "full_name": "KodeAndre/Echo-RESTful",
+    "html_url": "https://github.com/KodeAndre/Echo-RESTful",
+    "description": "RESTful api",
+    "homepage": "https://echo-restful.herokuapp.com/",
+    "language": "TypeScript",
+    "license": {
+      "key": "mit",
+      "name": "MIT License",
+      "spdx_id": "MIT",
+      "url": "https://api.github.com/licenses/mit",
+      "node_id": "MDc6TGljZW5zZTEz"
+    },
+    "topics": []
+  },
+  {
+    "id": 370944582,
+    "name": "TaskCafe",
+    "full_name": "KodeAndre/TaskCafe",
+    "html_url": "https://github.com/KodeAndre/TaskCafe",
+    "description": "Cafè website with a map and darkmode menu switching",
+    "homepage": "",
+    "language": "HTML",
+    "license": null,
+    "topics": []
+  },
+  {
+    "id": 515013607,
+    "name": "ShopperLister",
+    "full_name": "KodeAndre/ShopperLister",
+    "html_url": "https://github.com/KodeAndre/ShopperLister",
+    "description": "Shopping list app for daily use",
+    "homepage": "",
+    "language": "TypeScript",
+    "license": {
+      "key": "mit",
+      "name": "MIT License",
+      "spdx_id": "MIT",
+      "url": "https://api.github.com/licenses/mit",
+      "node_id": "MDc6TGljZW5zZTEz"
+    },
+    "topics": []
+  },
+  {
+    "id": 391157289,
+    "name": "visit_southampton",
+    "full_name": "KodeAndre/visit_southampton",
+    "html_url": "https://github.com/KodeAndre/visit_southampton",
+    "description": "Visit Southampton, but not official",
+    "homepage": "https://kodeandre.github.io/visit_southampton/",
+    "language": "JavaScript",
+    "has_projects": true,
+    "license": null,
+    "topics": []
+  },
+  {
+    "id": 487958088,
+    "name": "weatherCLI",
+    "full_name": "KodeAndre/weatherCLI",
+    "html_url": "https://github.com/KodeAndre/weatherCLI",
+    "description": "Project to fetch weather data for user chosen city with Bash shell scripting",
+    "homepage": "",
+    "language": "Shell",
+    "has_projects": true,
+    "license": null,
+    "topics": []
+  },
+  {
+    "id": 424335410,
+    "name": "Website_Client_Template",
+    "full_name": "KodeAndre/Website_Client_Template",
+    "html_url": "https://github.com/KodeAndre/Website_Client_Template",
+    "description": "ElectronJS template for websites.",
+    "homepage": "",
+    "language": "TypeScript",
+    "has_projects": true,
+    "license": null,
+    "topics": [
+      "electronjs",
+      "typescript"
+    ]
+  }
+]
