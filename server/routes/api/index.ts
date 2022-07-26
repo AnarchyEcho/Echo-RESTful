@@ -3,7 +3,7 @@ const router = express.Router();
 import cors from 'cors';
 router.use(cors({
   origin: [
-    `http://localhost:${process.env.PORT}`,
+    `http://localhost:${process.env.PORT || process.env.PORT2}`,
     'https://echo-restful.herokuapp.com/',
     'https://cvnuxt.vercel.app/',
   ],
