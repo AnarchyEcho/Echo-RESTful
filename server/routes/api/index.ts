@@ -6,7 +6,6 @@ router.use(cors({
     `http://localhost:${process.env.PORT}`,
     `http://localhost:${process.env.PORT2}`,
     'https://echo-restful.herokuapp.com/',
-    'https://echo-restful.vercel.app/',
     'https://cvnuxt.vercel.app/',
   ],
 }));
